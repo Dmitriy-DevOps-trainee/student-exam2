@@ -17,18 +17,31 @@ pipeline {
     }  
     stage('Application testing') {
       steps {
-        script {
-         python3 -m venv venv
-         . venv/bin/activate
-         pip install -e .
-         export FLASK_APP=js_example
-         export LC_ALL=C.UTF-8
-         export LANG=C.UTF-8
-         flask run &
-         pip install -e '.[test]'
-         coverage run -m pytest
-         coverage report
-         deactivate
+        sh """
+
+        python3 -m venv venv
+
+        . venv/bin/activate
+
+        pip install -e .
+
+        export FLASK_APP=js_example
+
+        export LC_ALL=C.UTF-8
+
+        export LANG=C.UTF-8
+
+        flask run &
+
+        pip install -e '.[test]'
+
+        coverage run -m pytest
+
+        coverage report
+
+        deactivate
+
+        """
       }
     }
     stage('Building image') {
