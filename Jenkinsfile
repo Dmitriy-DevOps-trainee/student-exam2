@@ -23,11 +23,11 @@ pipeline {
 
         . venv/bin/activate
 
-        pip install Flask
-
         pip install -e .
 
         export FLASK_APP=js_example
+
+        pip install --upgrade Flask
 
         flask run &
 
