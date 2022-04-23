@@ -2,8 +2,7 @@ pipeline {
   environment {
     registry = "dimitrii89/exam-images"
     registryCredential = 'dockerHub'
-    dockerImage = ''
-  }
+   }
   agent {
      node {
       label 'jenkins-agent' 
@@ -45,7 +44,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build(registry + ":web-app")
+          def dockerImage = docker.build(registry + ":web-app")
         }
       }
     }
