@@ -21,13 +21,13 @@ pipeline {
 
         python3 -m venv venv
 
-        . venv/bin/activate
-
-        pip install -e .
+        pip install Flask
 
         pip install coverage
 
-        pip install flask
+        . venv/bin/activate
+
+        pip install -e .
 
         export FLASK_APP=js_example
 
