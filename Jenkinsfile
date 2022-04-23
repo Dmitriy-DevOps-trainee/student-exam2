@@ -21,11 +21,9 @@ pipeline {
 
         python3 -m venv venv
 
-        pip install Flask
-
-        pip install coverage
-
         . venv/bin/activate
+
+        pip install Flask
 
         pip install -e .
 
