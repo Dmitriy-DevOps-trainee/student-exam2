@@ -29,7 +29,7 @@ pipeline {
 
         pip install --upgrade Flask
 
-        flask run &
+        python -m flask run &
 
         pip install -e '.[test]'
 
