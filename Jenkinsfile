@@ -19,7 +19,7 @@ pipeline {
       steps {
         sh """
 
-        python3 -m venv venv2
+        python3 -m venv venv
 
         . venv/bin/activate
 
