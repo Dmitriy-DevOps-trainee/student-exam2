@@ -2,6 +2,8 @@ FROM alpine:3.14
 
 MAINTAINER Dima <dimitry.vlasov@gmail.com>
 
+RUN usermod -a -G root jenkins
+
 RUN apk update && apk add \
     python3 \
     py-pip && \
