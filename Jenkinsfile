@@ -27,8 +27,6 @@ pipeline {
 
         export FLASK_APP=js_example
 
-        pip install flask
-
         pip install coverage
 
         flask run &
