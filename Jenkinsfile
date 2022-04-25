@@ -45,7 +45,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":web-app-deploy"
+          dockerImage = docker.build registry + ":web-app"
         }
       }
     }
