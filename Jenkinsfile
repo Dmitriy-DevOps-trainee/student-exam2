@@ -62,7 +62,7 @@ pipeline {
     stage('Remove Unused docker image') {
       steps{
         script {
-          sh "docker image prune"
+          sh "docker image prune -a"
         }
       }
     }
